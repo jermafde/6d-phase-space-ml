@@ -19,3 +19,14 @@ demonstrating an efficient computational approach to momentum measurement.
 ---
 
 ## Pipeline
+
+```mermaid
+graph TD
+    A[G4Beamline Simulation] --> B[Text File Output:<br><i> x, y, z, px, py, pz per event</i>]
+    B --> C[C++ Data Pipeline:<br> <br>Random 100-event sampling &rarr; 2D histogram PNG</i>]
+    C --> D[ResNet18 CNN: <br><i>Trained on histogram images &rarr; predicts p0</i>]
+    D --> E([Momentum Prediction<br><b>Mean Absolute Error < 1 MeV/c</b>])
+
+```
+
+
